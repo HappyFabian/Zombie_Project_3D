@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\AI_Zombie.cs" />
      <Compile Include="Assets\MyScript\Scripts\CombatSystem.cs" />
+     <Compile Include="Assets\MyScript\Scripts\DeathMechanic.cs" />
      <Compile Include="Assets\MyScript\Scripts\P_GunMechanic.cs" />
      <Compile Include="Assets\MyScript\Scripts\P_Motor.cs" />
      <Compile Include="Assets\MyScript\Scripts\P_Movement.cs" />

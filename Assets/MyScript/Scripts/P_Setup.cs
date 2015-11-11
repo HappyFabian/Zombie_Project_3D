@@ -22,12 +22,13 @@ public class P_Setup : NetworkBehaviour
 		{
 			DisableComponents();
 			AssignRemoteLayer();
-
 		} 
 		else 
 		{
 			this.GetComponentInChildren<MeshRenderer>().material = what;
 			DisableSceneCamera();
+			
+			Cursor.lockState = CursorLockMode.Locked;
 		}
 
 	}
