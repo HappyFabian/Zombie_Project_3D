@@ -16,10 +16,6 @@ public class CombatSystem : NetworkBehaviour
 
 	void CheckCondition()
 	{
-		if (health <= 0 && shouldDie && !isDead) 
-		{
-			isDead = true;
-		}
 		if (health <= 0 && shouldDie) 
 		{
 			if(EventDie != null)
@@ -27,6 +23,7 @@ public class CombatSystem : NetworkBehaviour
 				EventDie();
 			}
 			shouldDie = false;
+			isDead = true;
 		}
 	}
 
@@ -53,7 +50,10 @@ public class CombatSystem : NetworkBehaviour
 
 	public void DeductHealth(int damage)
 	{
-		health -= damage;
+		if (!isDead) 
+		{
+			health -= damage;
+		}
 	}
 
 	void OnHealthChanged(int hlth)

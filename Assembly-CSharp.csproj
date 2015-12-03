@@ -60,16 +60,17 @@
      <Compile Include="Assets\L_FG_Assets_Pack1.0\Standard Assets\Image Effects (Pro Only)\SepiaToneEffect.cs" />
      <Compile Include="Assets\L_FG_Assets_Pack1.0\Standard Assets\Image Effects (Pro Only)\TwirlEffect.cs" />
      <Compile Include="Assets\L_FG_Assets_Pack1.0\Standard Assets\Image Effects (Pro Only)\VortexEffect.cs" />
-     <Compile Include="Assets\MyScript\Character_Controller.cs" />
+     <Compile Include="Assets\MyScript\Scripts\Character_Controller.cs" />
      <Compile Include="Assets\MyScript\Scripts\CombatSystem.cs" />
      <Compile Include="Assets\MyScript\Scripts\DeathMechanic.cs" />
      <Compile Include="Assets\MyScript\Scripts\FPSDisplay.cs" />
-     <Compile Include="Assets\MyScript\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\MyScript\Scripts\P_GunMechanic.cs" />
      <Compile Include="Assets\MyScript\Scripts\P_Motor.cs" />
      <Compile Include="Assets\MyScript\Scripts\P_Movement.cs" />
      <Compile Include="Assets\MyScript\Scripts\P_Setup.cs" />
      <Compile Include="Assets\MyScript\Scripts\P_Weapon.cs" />
+     <Compile Include="Assets\Spawner_Time.cs" />
+     <Compile Include="Assets\Zombie_Attack.cs" />
      <None Include="Assets\L_FG_Assets_Pack1.0\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\L_FG_Assets_Pack1.0\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\L_FG_Assets_Pack1.0\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
@@ -143,17 +144,11 @@
      <None Include="Assets\L_FG_Assets_Pack1.0\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\L_FG_Assets_Pack1.0\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\L_FG_Assets_Pack1.0\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
