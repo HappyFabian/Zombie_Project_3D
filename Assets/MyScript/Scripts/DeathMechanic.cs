@@ -17,27 +17,38 @@ public class DeathMechanic : NetworkBehaviour
 		cSystem.EventDie += DisablePlayer;
 	}
 
-	void OnDisable()
-	{
-		cSystem.EventDie -= DisablePlayer;
-	}
 
 
 	void DisablePlayer()
 	{
-		GetComponent<P_Motor> ().enabled = false;
-		GetComponent<P_Movement> ().enabled = false;
-		GetComponent<P_GunMechanic> ().enabled = false;
-		GetComponent<P_Weapon> ().enabled = false;
-		GetComponent<CapsuleCollider> ().enabled = false;
-		cSystem.isDead = false;
-
-		Cursor.lockState = CursorLockMode.None;
-
-		Renderer[] renders = GetComponentsInChildren<Renderer> ();
-		foreach (Renderer ren in renders) 
+		if (this.tag == "ammoCache") 
 		{
-			ren.enabled = false;
+
+			GetComponent<SphereCollider>().enabled = false;
+			Renderer[] renders = GetComponentsInChildren<Renderer> ();
+			foreach (Renderer ren in renders) {
+				ren.enabled = false;
+			}
+		}
+
+		if (this.tag == "Player") {
+			GetComponent<P_Motor> ().enabled = false;
+			GetComponent<P_Movement> ().enabled = false;
+			GetComponent<P_GunMechanic> ().enabled = false;
+			GetComponent<P_Weapon> ().enabled = false;
+			cSystem.isDead = false;
+
+			Cursor.lockState = CursorLockMode.None;
+
+			Renderer[] renders = GetComponentsInChildren<Renderer> ();
+			foreach (Renderer ren in renders) {
+				ren.enabled = false;
+			}
+		}
+
+		if (this.tag == "Zombie") 
+		{
+			Destroy(this.gameObject);
 		}
 	}
 }

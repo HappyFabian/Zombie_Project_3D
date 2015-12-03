@@ -65,6 +65,11 @@ public class P_Weapon : NetworkBehaviour
 		}
 	}
 
+	public void ObtainMoreBullets(int bullets)
+	{
+		StockAmmunition += bullets;
+		SetStkBullets ();
+	}
 
 
 	public void Reload()

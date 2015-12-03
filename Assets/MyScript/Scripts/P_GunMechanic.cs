@@ -31,6 +31,10 @@ public class P_GunMechanic : NetworkBehaviour
 		{
 			Shoot();
 		}
+		if (Input.GetButtonDown ("E")) 
+		{
+			GrabBullets();
+		}
 	}
 
 	[Client]
@@ -48,6 +52,10 @@ public class P_GunMechanic : NetworkBehaviour
 					{
 						Cmd_PlayerShot (hit.collider.name, weapon.Damage);
 					}
+					if(hit.collider.tag == "Zombie")
+					{
+						Cmd_PlayerShot(hit.collider.name,weapon.Damage);
+					}
 				}
 				weapon.DeductRdyBullets(1);
 			}
@@ -59,6 +67,30 @@ public class P_GunMechanic : NetworkBehaviour
 
 	
 	}
+
+	[Client]
+	void GrabBullets()
+	{
+		RaycastHit hit;
+		Ray ray = new Ray (cam.transform.position, cam.transform.forward);
+		if (Physics.Raycast (ray, out hit, weapon.Range, mask)) 
+		{
+			if (hit.collider.tag == "ammoCache")
+			{
+				weapon.ObtainMoreBullets(30);
+				Cmd_PlayerGotCache(hit.collider.name);
+			}
+		}
+	}
+
+	[Command]
+	void Cmd_PlayerGotCache(string ID)
+	{
+		GameObject go = GameObject.Find (ID);
+		go.GetComponent<CombatSystem> ().DeductHealth (1);
+
+	}
+
 
 	[Command]
 	void Cmd_PlayerShot(string ID, int damage)
